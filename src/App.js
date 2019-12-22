@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getQuotes, saveQuoteData } from "../src/redux/actions/quoteAction";
 import "./App.css";
