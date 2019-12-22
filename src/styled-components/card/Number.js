@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledNumber = styled.p`
-  font-family: ${props=>props.themeState.fontfamily.secondary};
+  font-family: ${props => props.theme.fontfamily.secondary};
   position: absolute;
   margin: 0;
   top: 15px;
@@ -16,10 +16,15 @@ const StyledNumber = styled.p`
     right: -30px;
     width: 90px;
     height: 180px;
-    background: ${props=>props.themeState.mode ==="dark" ? props.themeState.colors.secondary : props.themeState.mode ==="light" ? props.themeState.chooseThemeColors.light.secondary : props.themeState.chooseThemeColors.middle.secondary  };
+    background: ${props =>
+      props.theme.mode === "dark"
+        ? props.theme.colors.secondary
+        : props.theme.mode === "light"
+        ? props.theme.chooseThemeColors.light.secondary
+        : props.theme.chooseThemeColors.middle.secondary};
     transform: rotate(-45deg);
     z-index: -1;
-    box-shadow:${props=>props.theme.boxshadows.numberbeforeshadow};
+    box-shadow: ${props => props.theme.boxshadows.numberbeforeshadow};
   }
 `;
 const Number = props => {

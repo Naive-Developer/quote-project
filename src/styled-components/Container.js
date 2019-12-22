@@ -9,17 +9,27 @@ const StyledContainer = styled.div`
   margin-top: -200px;
   width: 400px;
   height: 400px;
-  background:${props=>props.themeState.mode ==="dark" ? props.themeState.colors.primary : props.themeState.mode ==="light" ? props.themeState.chooseThemeColors.light.primary : props.themeState.chooseThemeColors.middle.primary  };
-  
-  border-radius:${({theme:{sizes}})=>sizes.radius};
+  background: ${props =>
+    props.theme.mode === "dark"
+      ? props.theme.colors.primary
+      : props.theme.mode === "light"
+      ? props.theme.chooseThemeColors.light.primary
+      : props.theme.chooseThemeColors.middle.primary};
+
+  border-radius: ${({ theme: { sizes } }) => sizes.radius};
   font-family: "dancing script", cursive;
   overflow: hidden;
-  color: ${props=>props.themeState.mode ==="dark" ? props.themeState.fontcolors.primary : props.themeState.mode ==="light" ? props.themeState.chooseThemeColors.light.fontcolorprimary : props.themeState.chooseThemeColors.middle.fontcolorprimary  };
+  color: ${props =>
+    props.theme.mode === "dark"
+      ? props.theme.fontcolors.primary
+      : props.theme.mode === "light"
+      ? props.theme.chooseThemeColors.light.fontcolorprimary
+      : props.theme.chooseThemeColors.middle.fontcolorprimary};
   letter-spacing: 0.5px;
 `;
 
-const Container=props=>(
-<StyledContainer {...props}>{props.children}</StyledContainer>
-)
+const Container = props => (
+  <StyledContainer {...props}>{props.children}</StyledContainer>
+);
 
 export default Container;
