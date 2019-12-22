@@ -3,9 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "bootstrap/dist/css/bootstrap.min.css";
 import configureStore from "../src/redux/reducers/configureStore";
 import { Provider } from "react-redux";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+library.add(fab, faQuoteLeft);
+
 
 const store = configureStore();
 console.log(store.getState());
@@ -16,6 +20,11 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
