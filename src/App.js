@@ -1,7 +1,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { getQuotes, saveQuoteData } from "../src/redux/actions/quoteAction";
-import "./App.css";
+
 import React, { useState, useEffect } from "react";
 import Card from "../src/styled-components/card/Cards";
 import Container from "../src/styled-components/Container";
